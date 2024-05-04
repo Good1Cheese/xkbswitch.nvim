@@ -111,20 +111,23 @@ function M.setup(opts)
         }
     )
 
+
+    -- NO NEEDED
+
     -- When Neovim loses focus
     -- When entering Insert Mode:
     -- 1. Switch to the previously saved layout
-    autocmd(
-        {'FocusLost', 'InsertEnter'},
-        {
-            pattern = "*",
-            callback = function()
-                vim.schedule(function()
-                    vim.fn.libcall(xkb_switch_lib, 'Xkb_Switch_setXkbLayout', saved_layout)
-                end)
-            end
-        }
-    )
+    -- autocmd(
+    --     {'FocusLost', 'InsertEnter'},
+    --     {
+    --         pattern = "*",
+    --         callback = function()
+    --             vim.schedule(function()
+    --                 vim.fn.libcall(xkb_switch_lib, 'Xkb_Switch_setXkbLayout', saved_layout)
+    --             end)
+    --         end
+    --     }
+    -- )
 end
 
 return M
